@@ -2,16 +2,16 @@ import React from "react";
 import { Avatar, Button, Card, Rate, Space, Typography } from "antd";
 import { EyeFilled, HeartFilled } from "@ant-design/icons";
 
-function Product({ title, price, desc }) {
+function Product({
+  title,
+  price,
+  desc,
+  image = "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+}) {
   return (
     <Card
       className={desc ? "card card-special" : "card"}
-      cover={
-        <img
-          src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-          alt="chicken"
-        />
-      }
+      cover={<img src={image} alt="chicken" />}
     >
       <Card.Meta title={title} description={desc} className="card-meta" />
       <Rate

@@ -305,3 +305,28 @@ img {
 }
 
 /* main end */
+
+/* footer start */
+#footer {
+  background: transparent;
+}
+
+.footer .footer-title {
+  color: var(--black);
+}
+
+.footer .footer-link {
+  color: var(--light-color);
+  cursor: pointer;
+  padding: 4px 0;
+  border: none;
+}
+.footer .footer-link a {
+  color: inherit;
+}
+.footer .footer-link:hover a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+/* footer ends */

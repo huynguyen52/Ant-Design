@@ -10,6 +10,7 @@ import CarouselSlider from "./components/CarouselSlider";
 import OurMenu from "./components/OurMenu";
 import Review from "./components/Review";
 import Order from "./components/Order";
+import Footer from "./components/Footer";
 function App() {
   const icons = [
     {
@@ -82,7 +83,9 @@ function App() {
         <Review />
         <Order />
       </Layout.Content>
-      <Layout.Footer id="footer"></Layout.Footer>
+      <Layout.Footer id="footer">
+        <Footer />
+      </Layout.Footer>
     </Layout>
   );
 }
