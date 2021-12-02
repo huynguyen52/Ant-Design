@@ -1,38 +1,307 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+:root {
+  --green: #27ae60;
+  --black: #192a56;
+  --light-color: #666;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  background: var(--black);
+  color: #fff;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.btn:hover {
+  background: var(--green);
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* header start */
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+#header .logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--black);
+}
+#header .menu {
+  background: transparent;
+  color: var(--light-color);
+}
+
+#header .menu-item {
+  line-height: 2;
+  border-radius: 4px;
+}
+
+#header .menu-item::after {
+  border: none;
+}
+
+#header .menu-item:hover,
+#header .menu-item.ant-menu-item-selected {
+  background: var(--green);
+  color: #fff;
+}
+
+#header .icons .icon {
+  background: #eee;
+  color: var(--black);
+}
+/* header end */
+
+/* main start */
+#main {
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+#main .header {
+  font-size: 28px;
+  color: var(--black);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#main .sub-header {
+  font-size: 20px;
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* carousel */
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.carousel .carousel-sub-title {
+  color: var(--green);
+}
+.carousel .carousel-title {
+  color: var(--black);
+}
+.carousel .carousel-desc {
+  color: var(--light-color);
+}
+.carousel .image {
+  clip-path: circle(50% at 50% 50%);
+}
+
+.ant-carousel .carousel-nav li {
+  background: var(--light-color);
+}
+
+.ant-carousel .carousel-nav li:hover button {
+  background: var(--green);
+}
+
+.ant-carousel .carousel-nav li.slick-active button {
+  background: var(--green);
+}
+
+/* our dishes */
+.our-dish,
+.about-us {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Card */
+
+.card {
+  overflow: hidden;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card .ant-card-cover {
+  max-width: 70%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card .ant-card-body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card .card-meta .ant-card-meta-title {
+  margin: 0;
+  color: var(--black);
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card .card-meta .ant-card-meta-description,
+.ant-card-body {
+  color: var(--light-color);
+  text-transform: capitalize;
 }
+
+.card .card-rate {
+  color: var(--green);
+}
+
+.card .ant-card-actions {
+  border: none;
+}
+
+.card .card-cta {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card .card-cta .ant-space-item {
+  flex: 1 1;
+}
+
+.card .card-price {
+  color: var(--green);
+  font-size: 20px;
+}
+
+.card:hover .btn {
+  letter-spacing: 0;
+}
+
+.card .card-icon {
+  color: var(--black);
+  background-color: #eee;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: absolute;
+  top: 10px;
+}
+
+.card .card-icon:hover {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.card .card-icon--left {
+  left: -100%;
+}
+.card:hover .card-icon--left {
+  left: 10px;
+}
+
+.card .card-icon--right {
+  right: -100%;
+}
+.card:hover .card-icon--right {
+  right: 10px;
+}
+
+.card.card-special {
+  text-align: left;
+}
+
+.card.card-special .card-rate {
+  order: 1;
+}
+.card.card-special .card-meta {
+  order: 2;
+}
+.card.card-special .card-cta {
+  order: 3;
+}
+.card.card-special .card-cta .ant-space-item:nth-child(1) {
+  order: 2;
+}
+.card.card-special .card-cta .ant-space-item:nth-child(2) {
+  order: 1;
+}
+
+.card.card-special .card-icon.card-icon--left {
+  display: none;
+}
+.card.card-special .card-icon.card-icon--right {
+  right: 10px;
+}
+
+/* about us */
+.about-us {
+  text-align: center;
+}
+.about-us-content {
+  text-align: left;
+}
+.about-us-extra {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-us-extra .ant-tag {
+  padding: 12px 18px;
+  color: var(--light-color);
+  font-size: 14px;
+  flex: 1 1;
+  width: 100%;
+}
+
+.about-us-extra .anticon {
+  font-size: 20px;
+  color: var(--green);
+}
+
+/* Reviews */
+.review .ant-carousel .slick-initialized .slick-slide {
+  margin: 0 6px;
+}
+
+.testimonial .ant-card-head {
+  border-bottom: none;
+}
+.testimonial .ant-card-head-title {
+  flex: 1 1 80%;
+}
+.testimonial .ant-card-extra {
+  flex: 1 1 20%;
+}
+
+.testimonial-icon {
+  color: #ccc;
+  font-size: 48px;
+}
+.testimonial-rate {
+  color: var(--green);
+  font-size: 12px;
+}
+
+/* Order */
+.order input,
+.order textarea,
+.order .ant-select:not(.ant-select-customize-input) .ant-select-selector,
+.order .ant-picker {
+  background: #eee;
+  color: var(--light-color);
+}
+.order input::placeholder,
+.order textarea::placeholder {
+  color: #ccc;
+}
+
+.order .form {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* main end */
