@@ -136,6 +136,8 @@ img {
 .card .ant-card-cover {
   max-width: 70%;
   margin: auto;
+  height: 200px;
+  overflow: hidden;
 }
 
 .card .ant-card-body {
